@@ -1,4 +1,4 @@
-const Product = require('../models/products')
+const Product = require('../models/product')
 
 const dataController = {
   index(req, res, next){
@@ -9,7 +9,7 @@ const dataController = {
         })
       } else {
         res.locals.data.products = foundProducts;
-        next()
+        next();
       }
     })
   },
@@ -20,7 +20,7 @@ const dataController = {
           msg: err.message
         })
       } else {
-        res.locals.data.products = viewProduct;
+        res.locals.data.product = viewProduct;
         next()
       }
     })
@@ -32,7 +32,7 @@ const dataController = {
           msg: err.message
         })
       } else {
-        res.locals.data.products = createdProduct;
+        res.locals.data.product = createdProduct;
         next()
       }
     })
@@ -44,7 +44,7 @@ const dataController = {
           msg: err.message
         })
       } else {
-        res.locals.data.products = deletedProduct;
+        res.locals.data.product = deletedProduct;
         next()
       }
     })
@@ -56,11 +56,22 @@ const dataController = {
           msg: err.message
         })
       } else {
-        res.locals.data.products = newProducts;
+        res.locals.data.product = newProducts;
         next();
       }
     })
-  }
+  },
+  buy(req, res, next){
+    Product.findIdAndUpdate(req.params.id, { $inc: { qty: -1} }, (err, updatedQty) => {
+      if(err) {
+        res.status(404).send({
+          msg: err.message
+        })
+      } else {
+
+      }
+    })
 }
+
 
 module.exports = dataController;

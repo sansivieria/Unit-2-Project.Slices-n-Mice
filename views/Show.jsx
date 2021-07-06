@@ -7,16 +7,16 @@ class Show extends React.Component {
     return (
       <DefaultLayout title={"GET GOOD...PIZZA!"}>
       <h1>show page</h1>
-        <img src={product.img} /><br/>
+        <img src={product.img}><br/>
         Name: {product.name}<br/>
         Manufacturer: {product.manufacturer}<br/>
         Group: {product.group}<br/>
         Rating: {product.rating}<br/>
         Price: ${product.price}<br/>
         Quantity: {product.qty}</br/>
-        <a href={`/products/${product._id}/edit`}>Edit This Listing</a><br/>
+        <button><a href={`/products/${product._id}/edit`}>Edit This Listing</a></button>
         <form method="POST" action={`/products/${product._id}?_method=DELETE`}>
-          <input type="submit" value="DELETE"
+          <button type="submit" value="DELETE">Delete</button>
         <nav className= "Nav">
           <a href={`/products/`}>Home</a>
       </DefaultLayout>

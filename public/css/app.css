@@ -100,3 +100,24 @@
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
 }
+
+
+/*flex box*/
+
+ #catalog {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: stretch;
+}
+
+li:nth-child(1) {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+}
