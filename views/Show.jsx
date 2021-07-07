@@ -9,7 +9,7 @@ class Show extends React.Component {
           <>
             <p>{this.props.product.qty} in stock</p>
             <form action={`/products/${this.props.product.id}/buy`}>
-            <input type="submit" value="BUY"/>
+            <button type="submit" value="BUY">BUY IT</button>
             </form>
           </>
         )
@@ -22,7 +22,7 @@ class Show extends React.Component {
     const product = this.props.product;
     return (
       <DefaultLayout title={"GET GOOD...PIZZA!"}>
-      <h1>show page</h1>
+      <h1>CAPITALISM, YEAH!</h1>
         <div><img src={product.img}></div>
         <div>Name: {product.name}</div>
         <div>Manufacturer: {product.manufacturer}</div>
