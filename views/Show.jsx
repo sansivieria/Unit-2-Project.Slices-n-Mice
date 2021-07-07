@@ -21,9 +21,9 @@ class Show extends React.Component {
     }
     const product = this.props.product;
     return (
-      <DefaultLayout title={"GET GOOD...PIZZA!"}>
-      <h1>CAPITALISM, YEAH!</h1>
-        <div><img src={product.img}></div>
+      <DefaultLayout title={"GET GOOD...PIZZA!"} styles={[{ key: 0, href: '/css/app.css' }, { key: 1, href: '/css/indexpage.css' }]}>
+
+        <div><img src={product.img}/></div>
         <div>Name: {product.name}</div>
         <div>Manufacturer: {product.manufacturer}</div>
         <div>Group: {product.group}</div>
@@ -32,9 +32,9 @@ class Show extends React.Component {
         <div>{buyItem()}</div>
         <button><a href={`/products/${product._id}/edit`}>Edit This Listing</a></button>
         <form method="POST" action={`/products/${product._id}?_method=DELETE`}>
-          <button type="submit" value="DELETE">Delete</button>
-        <nav className= "Nav">
-          <a href={`/products/`}>Home</a>
+          <input type="submit" value="DELETE"/>
+            </form>
+            <div className= "home"><a href="/products/">Home</a></div>
       </DefaultLayout>
     )
   }

@@ -14,7 +14,7 @@ router.put('/:id', dataController.update, viewController.redirectShow);
 // create
 router.post('/', dataController.create, viewController.redirectHome);
 // buy
-router.get('/:id/buy', dataController.buy, viewController.show);
+router.get('/:id/buy', dataController.buy, viewController.redirectShow);
 // edit
 router.get('/:id/edit', dataController.show, viewController.edit);
 // show

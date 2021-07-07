@@ -12,16 +12,14 @@ class Index extends React.Component {
               return (
                 <div className="productId" key={product._id}>
                   <div className="contents">
-                    <div><a href={`/product/${product._id}`}><img src={product.img} /></a></div><br/>
+                    <div><a href={`/products/${product._id}`}><img src={product.img} /></a></div><br/>
                     <label>Name: </label><div className="info">{product.name}</div>
                     <label>Manufacturer: </label><div className="info">{product.manufacturer}</div>
                     <label>Group: </label><div className="info">{product.group}</div>
                     <label>Rating: </label><div className="info">{product.rating}</div>
                     <label>Price: </label><div className="info">${product.price}</div>
                     <label>Quantity: </label><div className="info">{product.qty}</div>
-                    <form method="POST" action={`/product/${product._id}?_method=DELETE`}>
-                    <input className="button" type="submit" value="DELETE"/>
-                    </form>
+                    
                   </div>
                 </div>
               );

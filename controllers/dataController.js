@@ -38,7 +38,7 @@ const dataController = {
     })
   },
   destroy(req, res, next){
-    Product.findbyIdAndDelete(req.params.id, (err, deletedProduct) => {
+    Product.findByIdAndDelete(req.params.id, (err, deletedProduct) => {
       if(err) {
         res.status(404).send({
           msg: err.message
@@ -68,7 +68,7 @@ const dataController = {
           msg: err.message
         })
       } else {
-        res.locals.data.product.qty = updatedQty;
+        res.locals.data.qty = updateQty;
         next();
       }
     })
